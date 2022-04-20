@@ -10,7 +10,6 @@ const router = express.Router();
 
 router.get('/', userController.getAllController);
 
-// router.get('/:nick', pagination(Student), getOne);
 router.get('/:nick', userController.getOneController);
 
 router.post('/', userController.createOneController);
