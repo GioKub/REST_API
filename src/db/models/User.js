@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-const subscriberSchema = new mongoose.Schema({
-  nickname: {
+const UserSchema = new mongoose.Schema({
+  nick: {
     type: String,
     required: true,
   },
@@ -22,4 +22,4 @@ const subscriberSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('Student', subscriberSchema);
+module.exports = mongoose.model('User', UserSchema);

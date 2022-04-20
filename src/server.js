@@ -1,16 +1,16 @@
 require('dotenv').config();
 const express = require('express');
-const { connectToDB } = require('./src/db/connection')
+const { connectToDB } = require('./db/connection');
 
 const app = express();
 
-const studentsRouter = require('./src/routes/students');
+const usersRouter = require('./routes/users');
 
 connectToDB();
 
 app.use(express.json());
 
-app.use('/students', studentsRouter);
+app.use('/users', usersRouter);
 
 app.listen(3000, () => {
   console.log('server started');

@@ -8,19 +8,19 @@ function paginationMiddleware(model) {
 
     const docsLength = await model.countDocuments().exec();
 
-    let profiles = {};
+    const profiles = {};
 
     if (endIndex < docsLength) {
       profiles.next = {
         page: page + 1,
-        limit: limit,
+        limit,
       };
     }
 
     if (startIndex > 0) {
       profiles.previous = {
         page: page - 1,
-        limit: limit,
+        limit,
       };
     }
     try {
